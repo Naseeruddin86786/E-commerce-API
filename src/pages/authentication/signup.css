@@ -1,0 +1,27 @@
+.signup{
+    text-align: center;
+}
+
+.signup input {
+    margin: 5px;
+    height: 35px;
+    width: 300px;
+    border: 2px solid rgb(53,133,247);
+}
+
+.signup input::placeholder {
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.signup button {
+    height: 30px;
+    margin-top: 10px;
+    width: 150px;
+    border: 2px solid rgb(53,133,247);
+    border-radius: 15px;
+    background-color:rgb(53,133,247) ;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 20px;
+}
