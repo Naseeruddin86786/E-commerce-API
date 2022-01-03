@@ -1,5 +1,6 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+import { BrowserRouter, Route, Switch} from "react-router-dom";
+import React from "react";
+import { useState } from "react";
 import Authentication from "./pages/authentication/Authentication";
 import Home from "./pages/homepage/Homepage";
 import Cart from "./pages/cart/Cart";
@@ -8,8 +9,12 @@ import Signup from "./pages/authentication/Signup";
 
 import Header from "./components/Header/Header";
 
+export const cartContext = React.createContext();
+
 const Routes = () => {
+  const [cartItems, setCartItems] = useState([]);
   return (
+    <cartContext.Provider value={{ cartItems: cartItems, setCartItems:setCartItems }}>
     <BrowserRouter>
     <div>
       <Header />
@@ -22,6 +27,7 @@ const Routes = () => {
       </Switch>
     </div>
     </BrowserRouter>
+    </cartContext.Provider>
   );
 };
 

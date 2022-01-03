@@ -31,7 +31,7 @@ function ProductCard(props) {
           <Typography variant="h6" component="div">
             Ratingss: {product.rating.rate}
           </Typography>
-          <Typography><button className="button"> Add to cart </button></Typography>
+          <Typography><button className="button" onClick={() => props.addToCart(product)} > Add to cart </button></Typography>
         </CardContent>
       </CardActionArea>
     </Card>
