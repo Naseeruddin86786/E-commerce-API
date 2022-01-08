@@ -2,12 +2,14 @@ import {useState} from "react";
 import { Link } from "react-router-dom";
 import "./authentication.css";
 
-function Authentication() {
+function Authentication(props) {
+  console.log(props);
   const [name, setname] = useState("");
   const [password, setPassword] = useState("");
   const onName = (event) => setname(event.target.value);
   const onPassword = (event) => setPassword(event.target.value);
   const [error, setError] = useState(false);
+  // const [loading, setLoading] = useState(false);
   
     const validateInputs = () => {
       if (
@@ -20,6 +22,13 @@ function Authentication() {
         return false;
       };
     }
+
+    // const onLogin = () => {
+    //   setLoading(true);
+    //   setTimeout(()=> {
+    //     setLoading(false);
+    //   }, 2000);
+    // }
     
   const submit = () => {
     if (!validateInputs()){
@@ -42,7 +51,7 @@ function Authentication() {
         <h1>Signin</h1>
         <input onChange={onName} value={name} type="text" placeholder="Enter email address *" /><br/><br/>
         <input onChange={onPassword} value={password} type="password" placeholder="Enter password *" /> <br/><br/>
-        <button onClick={submit} >Login</button> <br/>
+        <button onClick={submit}  >Login</button> <br/>
         <button><Link to="/signup">signup</Link></button>
         
         {error ? <p>Please fill the Inputs! </p> : <p></p>}
